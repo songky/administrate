@@ -10,6 +10,8 @@ gem "pg"
 gem "redcarpet"
 gem "sentry-raven"
 gem "unicorn"
+gem 'bootstrap', '~> 4.1.1'
+gem 'tabler-rubygem', git: 'git@github.com:songky/tabler-rubygem.git'
 
 group :development, :test do
   gem "appraisal"

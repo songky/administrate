@@ -16,4 +16,7 @@ as a string representation of the boolean value.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Boolean
 %>
 
-<%= field.to_s %>
+<label class="col-sm-6 custom-switch">
+  <input type="checkbox" value="<%= field.to_s %>" class="custom-switch-input" <%= field.to_s == 'true' ? 'checked' : '' %> />
+  <span class="custom-switch-indicator"></span>
+</label>

@@ -15,26 +15,25 @@ All fields of has_one relationship would be rendered
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/HasOne
 %>
 
-<% if field.data %>
-  <fieldset class="attribute--nested">
-    <legend>
-      <%= link_to(
-        field.display_associated_resource,
-        [namespace, field.data],
-      ) %>
-    </legend>
-    <% field.nested_form.attributes.each do |attribute| -%>
-      <div>
-      <dt class="attribute-label">
-        <%= t(
-          "helpers.label.#{resource_name}.#{attribute.name}",
-          default: attribute.name.titleize,
-        ) %>
-      </dt>
-      <dd class="attribute-data attribute-data--<%= attribute.html_class %>">
-        <%= attribute.data %>
-      </dd>
-      </div>
-    <% end -%>
-  </fieldset>
-<% end %>
+<div class="col-sm-6">
+  <% if attribute.data %>
+    <fieldset class="form-fieldset">
+      <legend>
+        <%= link_to(field.display_associated_resource, [namespace, field.data], class: "btn btn-link ml-auto") %>
+      </legend>
+      <% field.nested_form.attributes.each do |attr| -%>
+        <div class="from-flex-group form-group row">
+          <label class="col-sm-3 col-form-label text-right">
+            <%= t("helpers.label.#{resource_name}.#{attribute.name}", default: attribute.name.titleize) %>
+          </label>
+          <div class="col-sm-9">
+            <span class="form-control-plaintext"><%= attr.data %></span>
+          </div>
+        </div>
+      <% end -%>
+    </fieldset>
+  <% else %>
+    <span class="form-control-plaintext"><%= t("administrate.fields.has_one.none", default: "–") %></span>
+  <% end %>
+</div>
+

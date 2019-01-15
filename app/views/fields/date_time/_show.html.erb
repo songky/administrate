@@ -16,6 +16,8 @@ as a localized date & time string.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/DateTime
 %>
 
-<% if field.data %>
-  <%= field.datetime %>
-<% end %>
+<div class="col-sm-6">
+  <% if field.data %>
+    <span class="form-control-plaintext"><%= field.datetime %></span>
+  <% end %>
+</div>

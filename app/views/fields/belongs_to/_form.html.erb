@@ -16,11 +16,13 @@ that displays all possible records to associate with.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/BelongsTo
 %>
 
-<div class="field-unit__label">
-  <%= f.label field.permitted_attribute %>
-</div>
-<div class="field-unit__field">
-  <%= f.select(field.permitted_attribute) do %>
-    <%= options_for_select(field.associated_resource_options, field.selected_option) %>
-  <% end %>
+<div class="from-flex-group form-group row">
+  <%= f.label field.name, class: "col-sm-3 col-form-label text-right" %>
+  <div class="col-sm-6">
+    <%= link_to(
+            field.display_associated_resource,
+            [namespace, field.data],
+            class: "btn btn-link ml-auto",
+            ) %>
+  </div>
 </div>

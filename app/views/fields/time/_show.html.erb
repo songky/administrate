@@ -14,4 +14,6 @@ By default, the attribute is rendered as a text tag.
 
 %>
 
-<%= field.data.strftime("%I:%M%p").to_s %>
+<div class="col-sm-6">
+  <span class="form-control-plaintext"><%= field.data.strftime("%I:%M%p").to_s %></span>
+</div>

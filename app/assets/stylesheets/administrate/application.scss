@@ -1,30 +1,72 @@
 @charset "utf-8";
 
-@import "reset/normalize";
+@import "tabler/variables";
+@import "bootstrap";
+@import "tabler";
+@import "tabler.plugins";
+@import "tabler.icons";
 
-@import "selectize";
 @import "datetime_picker";
 
-@import "library/clearfix";
-@import "library/data-label";
-@import "library/variables";
+.from-flex-group {
+  display: flex !important;
+}
 
-@import "base/forms";
-@import "base/layout";
-@import "base/lists";
-@import "base/tables";
-@import "base/typography";
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 30px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-left-width: 0;
+  font-size: 12px;
+}
 
-@import "components/app-container";
-@import "components/attributes";
-@import "components/buttons";
-@import "components/cells";
-@import "components/field-unit";
-@import "components/flashes";
-@import "components/form-actions";
-@import "components/main-content";
-@import "components/navigation";
-@import "components/pagination";
-@import "components/search";
+.pagination {
+  margin-top: 1em;
+  border-left: 1px solid #ddd;
+  .first{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .prev {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .page{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .next{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .last{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+}
 
-@import "utilities/text-color";
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1750px;
+  }
+}
+@media (min-width: 992px){
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  margin: 2px 0;
+  padding: 4px;
+  width: 19em;
+  display: block;
+}

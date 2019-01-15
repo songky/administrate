@@ -14,9 +14,9 @@ This partial renders a textarea element for a text attribute.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Text
 %>
 
-<div class="field-unit__label">
-  <%= f.label field.attribute %>
-</div>
-<div class="field-unit__field">
-  <%= f.text_area field.attribute %>
+<div class="from-flex-group form-group row">
+  <%= f.label field.attribute, class: "col-sm-3 col-form-label text-right" %>
+  <div class="col-sm-6">
+    <%= f.text_field field.attribute, class: 'form-control' %>
+  </div>
 </div>

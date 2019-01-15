@@ -15,13 +15,12 @@ By default, the relationship is rendered as a link to the associated object.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/BelongsTo
 %>
 
-<% if field.data %>
-  <% if valid_action?(:show, field.associated_class) %>
-    <%= link_to(
-      field.display_associated_resource,
-      [namespace, field.data],
-    ) %>
-  <% else %>
-    <%= field.display_associated_resource %>
+<div class="col-sm-6">
+  <% if field.data %>
+    <% if valid_action?(:show, field.associated_class) %>
+      <%= link_to(field.display_associated_resource, [namespace, field.data], class: "btn btn-link ml-auto") %>
+    <% else %>
+      <span class="form-control-plaintext"><%= field.display_associated_resource %></span>
+    <% end %>
   <% end %>
-<% end %>
+</div>

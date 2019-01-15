@@ -15,6 +15,10 @@ By default, the value is rendered as an `a` element.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Url
 %>
 
-<%= content_tag :a, href: field.data do %>
-  <%= field.data %>
-<% end %>
+<div class="col-sm-6">
+  <span class="form-control-plaintext">
+    <%= content_tag :a, href: field.data do %>
+      <%= field.data %>
+    <% end %>
+  </span>
+</div>

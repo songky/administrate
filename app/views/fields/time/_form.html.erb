@@ -14,9 +14,9 @@ By default, the input is a select field for the time attributes.
 
 %>
 
-<div class="field-unit__label">
-  <%= f.label field.attribute %>
-</div>
-<div class="field-unit__field">
-  <%= f.text_field field.attribute, data: { type: 'time' } %>
+<div class="from-flex-group form-group row">
+  <%= f.label field.attribute, class: "col-sm-3 col-form-label text-right" %>
+  <div class="col-sm-6">
+    <%= f.text_field field.attribute, data: { type: 'time' }, class: 'form-control' %>
+  </div>
 </div>
