@@ -5,6 +5,7 @@ it:
       confirm: Sei sicuro?
       destroy: Elimina
       edit: Modifica
+      show: Visualizza
       edit_resource: Modifica %{name}
       show_resource: Visualizza %{name}
       new_resource: Nuovo %{name}

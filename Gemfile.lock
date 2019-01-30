@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:songky/tabler-rubygem.git
-  revision: dcc10ab9d663216c30fe417db55534f2955072a0
+  revision: e71c1d0599995bb6717b7b5d726eb9dc0c77745a
   specs:
-    tabler-rubygem (0.1.4)
+    tabler-rubygem (0.1.5)
       autoprefixer-rails (>= 6.0.3)
 
 PATH

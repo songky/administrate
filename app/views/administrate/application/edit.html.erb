@@ -17,20 +17,25 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 
 <% content_for(:title) { t("administrate.actions.edit_resource", name: page.page_title) } %>
 
-<header class="main-content__header" role="banner">
-  <h1 class="main-content__page-title">
-    <%= content_for(:title) %>
-  </h1>
+<div class="row row-cards row-deck">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= content_for(:title) %>
+        </h4>
+        <%= link_to(
+                t("administrate.actions.show_resource", name: page.page_title),
+                [namespace, page.resource],
+                class: "btn btn-link ml-auto",
+                ) if valid_action?(:show) && show_action?(:show, page.resource) %>
+      </div>
 
-  <div>
-    <%= link_to(
-      t("administrate.actions.show_resource", name: page.page_title),
-      [namespace, page.resource],
-      class: "button",
-    ) if valid_action?(:show) && show_action?(:show, page.resource) %>
+      <div class="card-body">
+        <%= render "form", page: page %>
+      </div>
+
+    </div>
   </div>
-</header>
+</div>
 
-<section class="main-content__body">
-  <%= render "form", page: page %>
-</section>

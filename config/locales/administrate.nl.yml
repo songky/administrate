@@ -5,6 +5,7 @@ nl:
       confirm: Weet u het zeker?
       destroy: Verwijder
       edit: Bewerk
+      show: Toon
       edit_resource: Bewerk %{name}
       show_resource: Toon %{name}
       new_resource: Nieuw %{name}

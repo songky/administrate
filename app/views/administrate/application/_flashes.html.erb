@@ -12,9 +12,10 @@ This partial renders flash messages on every page.
 %>
 
 <% if flash.any? %>
-  <div class="flashes">
-    <% flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>"><%= value.html_safe %></div>
-    <% end -%>
-  </div>
+  <% flash.each do |key, value| -%>
+    <div class="alert alert-icon alert-<%= key == 'alert' ? 'danger' : 'success' %>" role="alert">
+      <button type="button" class="close" data-dismiss="alert"></button>
+      <i class="fe fe-check mr-2" aria-hidden="true"></i> <%= value.html_safe %>
+    </div>
+  <% end -%>
 <% end %>

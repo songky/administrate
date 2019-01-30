@@ -5,6 +5,7 @@ id:
       confirm: Anda yakin?
       destroy: Hapus
       edit: Perbarui
+      show: Tampilkan
       edit_resource: Perbarui %{name}
       show_resource: Tampilkan %{name}
       new_resource: "%{name} baru"

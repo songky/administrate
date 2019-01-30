@@ -5,6 +5,7 @@ zh-CN:
       confirm: 确定?
       destroy: 删除
       edit: 编辑
+      show: 查看
       edit_resource: 编辑 %{name}
       show_resource: 查看 %{name}
       new_resource: 新建 %{name}

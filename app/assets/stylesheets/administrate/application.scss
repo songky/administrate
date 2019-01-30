@@ -4,9 +4,30 @@
 @import "bootstrap";
 @import "tabler";
 @import "tabler.plugins";
-@import "tabler.icons";
 
 @import "datetime_picker";
+
+.table--asc,.cell-label--desc {
+  font-weight: 700
+}
+
+.table__sort-indicator {
+  margin-left: 15px
+}
+
+.table__sort-indicator svg {
+  fill: #7b808c;
+  height: 13px;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  width: 13px
+}
+
+.table__sort-indicator--desc {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
 
 .from-flex-group {
   display: flex !important;

@@ -5,6 +5,7 @@ uk:
       confirm: Ви впевнені?
       destroy: Видалити
       edit: Редагувати
+      show: Показати
       edit_resource: Редагувати %{name}
       show_resource: Показати %{name}
       new_resource: Новий %{name}

@@ -14,32 +14,32 @@ and renders all form fields for a resource's editable attributes.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
-<%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
+<%= form_for([namespace, page.resource]) do |f| %>
   <% if page.resource.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= t(
-          "administrate.form.errors",
-          pluralized_errors: pluralize(page.resource.errors.count, t("administrate.form.error")),
-          resource_name: display_resource_name(page.resource_name)
-        ) %>
-      </h2>
-
-      <ul>
-        <% page.resource.errors.full_messages.each do |message| %>
-          <li class="flash-error"><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert"></button>
+      <%= t("administrate.form.errors",
+            pluralized_errors: pluralize(page.resource.errors.count, t("administrate.form.error")),
+            resource_name: display_resource_name(page.resource_name)
+          ) %>
     </div>
+
+    <% page.resource.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
 
   <% page.attributes.each do |attribute| -%>
-    <div class="field-unit field-unit--<%= attribute.html_class %>">
-      <%= render_field attribute, f: f %>
-    </div>
+    <%= render_field attribute, f: f %>
   <% end -%>
 
-  <div class="form-actions">
-    <%= f.submit %>
+  <div class="from-flex-group form-group row">
+    <label class="col-sm-3 col-form-label text-right"></label>
+    <div class="col-sm-2">
+      <%= f.submit class: 'btn btn-primary btn-block' %>
+    </div>
   </div>
 <% end %>

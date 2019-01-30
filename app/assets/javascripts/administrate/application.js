@@ -8,3 +8,7 @@
 //= require datetime_picker
 
 //= require_tree .
+
+$(function(){
+    $('.custom-select').selectize({})
+})

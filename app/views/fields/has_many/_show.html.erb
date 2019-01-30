@@ -20,10 +20,14 @@ from the associated resource class's dashboard.
 
 <div class="col-sm-6">
   <% if field.resources.any? %>
+    <% order = field.order_from_params(params.fetch(field.name, {})) %>
+    <% page_number = params.fetch(field.name, {}).fetch(:page, nil) %>
     <%= render(
             "collection",
             collection_presenter: field.associated_collection,
-            resources: field.resources(params[field.name]),
+            collection_field_name: field.name,
+            page: page,
+            resources: field.resources(page_number, order),
             table_title: field.name
         ) %>
 

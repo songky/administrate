@@ -5,6 +5,7 @@ ca:
       confirm: Estàs segur?
       destroy: Destruir
       edit: Editar
+      show: Mostra
       edit_resource: Edita %{name}
       show_resource: Mostra %{name}
       new_resource: Nou %{name}

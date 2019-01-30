@@ -6,6 +6,7 @@ pt-BR:
       confirm: Você tem certeza?
       destroy: Deletar
       edit: Editar
+      show: Visualizar
       edit_resource: Editar %{name}
       show_resource: Visualizar %{name}
       new_resource: Criar %{name}

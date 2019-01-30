@@ -5,6 +5,7 @@ da:
       confirm: Er du sikker?
       destroy: Slet
       edit: Rediger
+      show: Vis
       edit_resource: Rediger %{name}
       show_resource: Vis %{name}
       new_resource: Ny %{name}

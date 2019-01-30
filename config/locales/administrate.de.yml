@@ -5,6 +5,7 @@ de:
       confirm: Sind Sie sicher?
       destroy: Löschen
       edit: Editieren
+      show: Anzeigen
       edit_resource: "%{name} editieren"
       show_resource: "%{name} anzeigen"
       new_resource: "%{name} erstellen"

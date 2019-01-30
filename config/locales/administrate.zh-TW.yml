@@ -5,6 +5,7 @@ zh-TW:
       confirm: 確定？
       destroy: 刪除
       edit: 編輯
+      show: 檢視
       edit_resource: 編輯 %{name}
       show_resource: 檢視 %{name}
       new_resource: 新增 %{name}

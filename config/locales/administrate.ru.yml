@@ -5,6 +5,7 @@ ru:
       confirm: Вы уверены?
       destroy: Удалить
       edit: Редактировать
+      show: Показать
       edit_resource: Редактировать %{name}
       show_resource: Показать %{name}
       new_resource: Новый %{name}

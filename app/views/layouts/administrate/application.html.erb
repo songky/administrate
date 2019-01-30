@@ -22,36 +22,25 @@ By default, it renders:
     <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
   </title>
   <%= render "stylesheet" %>
+  <%= render "javascript" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= render "icons" %>
+<body class="">
+<div class="page">
+  <div class="flex-fill">
 
-  <div class="app-container">
+    <%= render "icons" -%>
+
     <%= render "navigation" -%>
 
-    <main class="main-content" role="main">
-      <%= render "flashes" -%>
-      <%= yield %>
-    </main>
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <%= render "flashes" -%>
+        <%= yield %>
+      </div>
+    </div>
+
   </div>
-
-  <%= render "javascript" %>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>OTC</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<body>
-<%= yield %>
+</div>
 </body>
 </html>

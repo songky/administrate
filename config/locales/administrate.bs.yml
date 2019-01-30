@@ -4,6 +4,7 @@ bs:
       confirm: Jeste li sigurni?
       destroy: Izbrisati
       edit: Izmjena
+      show: Pregled
       edit_resource: Izmjena %{name}
       show_resource: Pregled %{name}
       new_resource: Novi %{name}

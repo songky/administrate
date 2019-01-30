@@ -18,32 +18,34 @@ as well as a link to its edit page.
 
 <% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
 
-<header class="main-content__header" role="banner">
-  <h1 class="main-content__page-title">
-    <%= content_for(:title) %>
-  </h1>
+<div class="row row-cards row-deck">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= content_for(:title) %>
+        </h4>
+        <%= link_to(
+                t("administrate.actions.edit_resource", name: page.page_title),
+                [:edit, namespace, page.resource],
+                class: "btn btn-link ml-auto",
+                ) if valid_action?(:edit) && show_action?(:edit, page.resource)
+        %>
+      </div>
 
-  <div>
-    <%= link_to(
-      t("administrate.actions.edit_resource", name: page.page_title),
-      [:edit, namespace, page.resource],
-      class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+      <div class="card-body">
+        <% page.attributes.each do |attribute| %>
+          <div class="from-flex-group form-group row">
+            <label class="col-sm-3 col-form-label text-right" id="<%= page.resource_name %> - <%= attribute.name %> - <%= attribute.html_class %>">
+              <%= t(
+                      "helpers.label.#{resource_name}.#{attribute.name}",
+                      default: attribute.name.titleize,
+                      ) %>
+            </label>
+            <%= render_field attribute, page: page %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</header>
-
-<section class="main-content__body">
-  <dl>
-    <% page.attributes.each do |attribute| %>
-      <dt class="attribute-label" id="<%= attribute.name %>">
-      <%= t(
-        "helpers.label.#{resource_name}.#{attribute.name}",
-        default: attribute.name.titleize,
-      ) %>
-      </dt>
-
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-          ><%= render_field attribute, page: page %></dd>
-    <% end %>
-  </dl>
-</section>
+</div>

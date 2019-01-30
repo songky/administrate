@@ -5,6 +5,7 @@ al:
       confirm: A jeni te sigurtë?
       destroy: Fshij
       edit: Ndrysho
+      show: Trego
       edit_resource: Ndrysho %{name}
       show_resource: Trego %{name}
       new_resource: Të re %{name}

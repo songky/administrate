@@ -5,6 +5,7 @@ ar:
       confirm: "هل أنت متأكد ؟"
       destroy: "حذف"
       edit: "تعديل"
+      show: "إظهار"
       edit_resource: "تعديل %{name}"
       show_resource: "إظهار %{name}"
       new_resource: "جديد  %{name}"

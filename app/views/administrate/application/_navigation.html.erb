@@ -7,12 +7,22 @@ for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
 
-<nav class="navigation" role="navigation">
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <%= link_to(
-      display_resource_name(resource),
-      [namespace, resource_index_route_key(resource)],
-      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
-    ) %>
-  <% end %>
-</nav>
+<div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg order-lg-first">
+        <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+          <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+            <li class="nav-item">
+              <%= link_to(
+                      display_resource_name(resource),
+                      [namespace, resource_index_route_key(resource)],
+                      class: "nav-link #{nav_link_state(resource)}"
+                  ) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

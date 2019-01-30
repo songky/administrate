@@ -5,6 +5,7 @@ fr:
       confirm: Êtes-vous sûr ?
       destroy: Supprimer
       edit: Modifier
+      show: Détails
       edit_resource: Modifier %{name}
       show_resource: Détails %{name}
       new_resource: Création %{name}

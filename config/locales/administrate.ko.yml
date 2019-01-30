@@ -5,6 +5,7 @@ ko:
       confirm: 괜찮습니까?
       destroy: 삭제
       edit: 편집
+      show: 보여주기
       edit_resource: 편집 %{name}
       show_resource: 보여주기 %{name}
       new_resource: 새로운 %{name}
